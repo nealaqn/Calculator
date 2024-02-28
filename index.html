@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="page">
+        <div class="calculator">
+            <input type="text" class="display" readonly>
+            <div class="keys">
+                <button onclick="appendNumber('+')">+</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendNumber('-')">-</button>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendNumber('*')">*</button>
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendNumber('/')">/</button>
+                <button onclick="clearNumber()">C</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const display = document.querySelector(".display");
+
+        const equal = document.createElement("button");
+        equal.classList = "equal"
+        equal.textContent = "="
+        equal.style.animation = "goDown 2s ease forwards"
+        equal.addEventListener("click", () => {
+            calcNumber();
+        });
+        document.querySelector(".calculator").append(equal);
+
+
+        const check = () => {
+            if (display.value != '') {
+                equal.style.bottom = "-120px"          
+                equal.style.zIndex = "999"    
+            }
+        }
+
+        const appendNumber = (input) => {
+            display.value += input;
+            check();
+        }
+
+        const clearNumber = () => {
+            display.value = '';
+            equal.style.bottom = "50px"          
+            equal.style.zIndex = "-119999"    
+            check();
+        }
+
+        const calcNumber = () => {
+            try {
+                display.value = eval(display.value);
+            }
+            catch(error) {
+                display.value = "Error"
+            }
+        }
+
+    </script>
+</body>
+</html>

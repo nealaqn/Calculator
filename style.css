@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background: linear-gradient(#4612ad, #3e1047);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -999;
+}
+
+
+.calculator {
+    width: 400px;
+    height: 550px;
+    background-color: #1d1144;
+    border-radius: 50px;
+    box-shadow: 0 0px 50px ;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+.display {
+    width: calc(100% - 60px);
+    height: calc(20% - 40px);
+    background-color: #0f0923;
+    border-radius: 40px 40px 35px 35px;
+    color: white;
+    font-size: 4em;
+    padding: 20px 30px;
+    overflow: hidden;
+    border: 0px;
+    text-align: right;
+    box-shadow: inset 0 0 10px black;
+    
+}
+.keys {
+    width: calc(100% - 20px);
+    height: calc(75% - 40px);;
+    background-color: #0f0923;
+    border-radius: 35px 35px 50px 50px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: inset 0 0 10px black;
+
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    margin: 0 12px;
+    border-radius: 50px;
+    background-color: #27175a;
+    border: none;
+    color: white;
+    font-size: 1.7em;
+    font-family:sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 0 5px black;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.equal {
+    width: 200px;
+    border-radius: 25px;
+    border: 12px solid #a6188a;
+    background-color: #1d1144;
+    box-shadow: 0 0 30px black;
+    /* margin-top: 50px; */
+    display: flex;
+    transition: bottom 2s ease, z-index 2s ease;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    position: absolute;
+    bottom: 50px;
+    opacity: 1;
+    z-index: -119999;
+}
+
+.equal:hover {
+    opacity: 1;
+    background-color: #140c2e;
+}
